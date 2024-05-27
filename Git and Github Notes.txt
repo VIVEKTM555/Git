@@ -1,0 +1,149 @@
+Git: Git is an open source version control system which allows us to access the history of the codes and track all the 
+changes that has happend in the system. This can be simply understood by telling that Git is like your bank account which 
+consists of all the credits and debits that happen to your account and you can track all the details which are required. 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+The main importance of Git is that you can track the history of the project and also collobarate in a project more 
+effectively.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Features:
+---------
+1) Open source, Fast & Free.
+2) Popular across the globe.
+3) Scalable as per the size of the project.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Github:
+-------
+Github is an open source community which helps developers to maintain their codes. Developers can save their codes in folders
+which is named as repositries and we can manage the code here. 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Git Configuration:
+------------------
+1) git config --global user.name (your_user_name)
+--------------------------------------------------
+The first commond to run is setting up the user-name which is the username of the github account of the user.
+
+2) git config --global user.email (your_user_email)
+---------------------------------------------------
+The second commond to run is setting up the user-email which is the email-id in which the github account is created.
+
+3) git config --list
+--------------------
+This commond will help you to see the username and the email that has been set. If everything goes well then the config list will 
+show the username and email that are set initially.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Setting up git configuration in VS-code Editor:
+-----------------------------------------------
+1) git clone https://github.com/something/something.com.git
+-----------------------------------------------------------
+The first commond which we are going to learn here is the git clone commond. Using this commond developer can clone the 
+respository from the remote(GitHub) to the local(computer/laptop). Just run the git clone commond with the repository address 
+to clone any public repository.
+
+2) git status
+-------------
+The next commond which we can view is the git status which will tell us that in which state the git repository which is cloned
+is in. 
+
+The git status are of 4 types:
+--> modified: The files or code which is modified in the local shows the status of MODIFIED.
+--> unmodified: The files or code that are not modified in the local shows the status of UNMODIFIED.
+--> staged: The files which are ready to be commited shows the STAGED status.
+--> untracked: When you create new files in the repository it shows the status of UNTRACKED.
+
+3) git add
+----------
+The next commond is the git add commond. The git add commond will help in changing the status from modified to staged. 
+The staged status is just before the commit. 
+Syntax: git add filename.html [to stage a file called filename.html]
+        git add .[This will stage all the files that are in modified stage]
+
+4) git commit
+-------------
+The git commit commond helps to commit the changes before pushing them to the remote repository. We can display a meaningful 
+message once we commit any changes..
+Syntax: git commit -m "some-message".
+
+5) git push origin main
+-----------------------
+The git push origin main is a commond which will help in pushing the changes to the remote repository. Origin simply means 
+here the copy of the repo which we have on our local machine and main means the branch on which we are commiting into.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+The above where the steps in which we have seen how we can clone a repo and make changes in it. Now we will look how we can 
+start everything from local machine and then push them to the remote repo(github). This can be achieved using the init method.
+
+Steps:
+------
+1) Create a directory inside VS-code or any code editor of your choice. [commond: mkdir directory_name].
+2) Hop inside the directory to make any changes [commond: cd directory_name].
+3) Initially this is a normal repository and not a git repository. You can check this use [commond: ls -a] and you will not 
+find .git file in this.
+4) To convert this into a git repository use [commond: git init]. 
+5) Now re-run the commond [ls -a] and now you can see the .git file.
+6) Go to your github profile and create a new repository.
+7) Run the commond [git init]
+8) Run the commond [git remote add origin https://github.com/something/something.com.git]
+9) Create some new files to commit changes.
+10) Run the commond git add, git commit.
+11) Run the commond [git remote -v] to check to which repo we are committing.
+12) Run the commond [git branch] to check to which branch we are comitting. Default it is master but we need to change it 
+into main.
+13) Run the commond [git branch -M main] to rename the branch to main.
+14) Run the commond [git push origin main] to commit all the changes to the remote repo.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Git branches:
+-------------
+Git branches are effectively a pointer to a snapshot of your changes. When you want to add a new feature or fix a bug—no matter
+how big or how small—you spawn a new branch is needed for your changes.
+
+Git branches commond:
+---------------------
+git branch -> This commond shows the number of branches in the repository.
+git branch -b branch-name -> creates a new branch with the given branch name.
+git checkout branch-name -> This navigates to the branch-name given from the initial branch. 
+git branch -d branch-name -> This deletes the branch which is given with the commond. [note that you can't delete a branch in 
+which you have checked out].
+
+git diff branch-name -> This helps in understanding the difference before and after the change.
+git merge branch-name -> This helps in merging the branches with main branch.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Reverting changes:
+------------------
+Condition 1: Staged changes
+---------------------------
+git reset file-name -> reset the staged changes for the specific file name.
+git reset -> reset the staged changes for all the files.
+
+Condition 2: Committed changes [only one commmit]
+--------------------------------------------------
+git reset HEAD~1 -> HEAD~1 is the recent commit which is taken place and by using the HEAD~1 we can revert one step back.
+
+Condition 3: Committed changes [Multiple commmits]
+--------------------------------------------------
+git reset hash-code -> git reset hash-code will help us in reverting the commits. The hash-code can be found using [git log].
+git reset --hard hash-code -> This commond works same as the above commond but the difference is that this reverts the changes 
+from the code editor too.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Fork:
+-----
+A fork is a copy of a repository that allows you to make your own changes without impacting the original project. We can fork 
+any public repository and work on them. But accepting the changes made is all dependent on the owner of the repository.
+
+----------------------------------------------------------------------------------------------------------------------------
